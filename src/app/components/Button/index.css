@@ -1,0 +1,24 @@
+.Button {
+  font-weight: 700;
+  color: var(--gray);
+  padding: 12px 34px;
+  background: var(--red);
+  border: 1px solid var(--red);
+  border-radius: var(--default-radius);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.Button:disabled {
+  background: var(--gray);
+  color: var(--white);
+  cursor: not-allowed;
+}
+
+.Button--small {
+  padding: 7px 24px;
+}
+
+.Button--outline {
+  background: transparent;
+}

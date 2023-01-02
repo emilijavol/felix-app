@@ -1,0 +1,25 @@
+:root {
+  --red: #e50914;
+  --true-black: #000000;
+  --black: #222222;
+  --gray: #e5e5e5;
+  --white: #ffffff;
+
+  --default-radius: 4px;
+}
+
+* {
+  font-size: 16px;
+  color: var(--gray);
+}
+
+body {
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}

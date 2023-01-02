@@ -1,0 +1,14 @@
+.Footer {
+  background: var(--black);
+  color: var(--gray);
+  font-weight: 700;
+  padding: 24px 0px;
+}
+
+.Footer__container {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

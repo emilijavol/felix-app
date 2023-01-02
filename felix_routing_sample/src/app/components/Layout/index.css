@@ -1,0 +1,14 @@
+.Layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--true-black);
+}
+
+.Layout__main {
+  flex: 1;
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 0 68px;
+}

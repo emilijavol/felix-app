@@ -1,0 +1,13 @@
+.Login {
+  padding-top: 10vh;
+}
+
+.Login__form {
+  background: var(--gray);
+  display: inline-flex;
+  flex-direction: column;
+  padding: 60px 60px 18px;
+  color: var(--black);
+  margin: 0 auto;
+  align-items: center;
+}
