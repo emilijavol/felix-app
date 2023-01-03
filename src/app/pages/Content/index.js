@@ -25,7 +25,7 @@ const PAID_MOVIES_API = "https://dummy-video-api.onrender.com/content/items";
 }
 
 */
-function Content({ favorites = [], toggleFavorite = () => {} }) {
+/*function Content({ favorites = [], toggleFavorite = () => {} }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [movies, setMovies] = useState([]);
@@ -54,7 +54,41 @@ function Content({ favorites = [], toggleFavorite = () => {} }) {
 
   useEffect(() => {
     fetchData();
+  }, [fetchData]);*/
+function Content({ auth, favorites, toggleFavorite }) {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [movies, setMovies] = useState([]);
+  const [authKey] = useState(auth);
+  const [retries, setRetries] = useState(3);
+
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    if (authKey) {
+      try {
+        const requestOption = {
+          method: "GET",
+          headers: { authorization: authKey },
+        };
+        const response = await fetch(PAID_MOVIES_API, requestOption);
+        const resultData = await response.json();
+
+        setMovies(resultData);
+      } catch (error) {
+        if (retries > 0) {
+          setRetries(retries - 1);
+        }
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    } else window.location.pathname = "/";
+  }, [retries, authKey]);
+
+  useEffect(() => {
+    fetchData();
   }, [fetchData]);
+
   return (
     <div className="Content">
       {loading && <p>Loading...</p>}
