@@ -25,36 +25,6 @@ const PAID_MOVIES_API = "https://dummy-video-api.onrender.com/content/items";
 }
 
 */
-/*function Content({ favorites = [], toggleFavorite = () => {} }) {
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-  const [movies, setMovies] = useState([]);
-  const fetchData = useCallback(async () => {
-    const { authToken } = this.props;
-    this.setState({ loading: true });
-
-    try {
-      const response = await fetch(PAID_MOVIES_API, {
-        headers: { authorization: authToken },
-      });
-
-      if (response.status > 399 && response.status < 600) {
-        throw new Error("failed to load");
-      }
-
-      const movies = await response.json();
-
-      setMovies(movies);
-    } catch (error) {
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  }, [authToken]);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);*/
 function Content({ auth, favorites, toggleFavorite }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
